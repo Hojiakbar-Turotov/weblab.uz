@@ -1,0 +1,230 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+
+// Colors
+$homeBtnColor: #2b2b2b;
+$homeBtnColor2: #faff00;
+$socialIconsHover: #faff00;
+
+// MIXINS
+
+@mixin PageTitle1 {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;  
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 0;
+}
+
+@mixin PageTitle2 {
+    font-size: 30px;
+    color: $homeBtnColor2;
+    font-family: 'Montserrat', sans-serif;  
+    letter-spacing: 0.7px;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #000000!important;
+    overflow-x: hidden;
+}
+
+// Navbar
+nav{
+    padding: 15px 80px!important;
+    .navbar-brand{
+        font-size: 25px;
+        color: #bb9191!important;
+        font-family: 'Montserrat', sans-serif;  
+
+    }
+    .navbar-nav{
+        margin-left: auto;
+        .nav-item{
+            margin: 20px;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;  
+            a{
+                color: #949494!important;
+                text-decoration: none;
+                transition: 0.2s ease;
+                &:hover{
+                    color: #ffffff!important;
+
+                }
+            }
+        }
+    }
+}
+
+nav.fixed{
+    padding: 15px 80px!important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: #000000cf;
+    box-shadow: 0 5px 15px #0c0c0cde;
+
+}
+
+// Home
+.aboutInfo{
+    display:flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    padding: 70px;
+    .side1{
+        width: 65%;
+        margin: 20px 0;
+        .title{
+            font-size:70px ;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            font-weight: 700;
+        }
+        .description{
+            width: 75%;
+            color: #aaa;
+            margin: 15px 3px 60px;
+            font-size: 22px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .buttons{
+            .linkBtn{
+                padding: 17px 40px;
+                background-color: $homeBtnColor;
+                color: #fff;
+                font-size: 20px;
+                text-decoration: none;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
+                &:hover{
+                    background-color:$homeBtnColor2 ;
+                    color: #000;
+                }
+                &:nth-child(1){
+                    margin-right: 10px;
+                    background-color:$homeBtnColor2 ;
+                    color: #000;
+                    &:hover{
+                        background-color: $homeBtnColor;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .socialNet{
+            margin-top: 50px;
+            .links{
+                padding: 0 30px 0 0;
+                .iconSvg{
+                    font-size: 35px;
+                    color: #fff;
+                    &:hover{
+                        color: $socialIconsHover;
+                    }
+                }
+            }
+        }
+    }
+    .side2{
+        width: 350px;
+        border-radius: 50%;
+        overflow: hidden;
+        .myImage{
+            width: 90%;
+            transform: translate(15px, 50px);
+        }
+    }
+}
+
+// Portfolio
+.titles{
+    text-align: center;
+    margin-top: 75px;
+    .title1{
+        @include PageTitle1();
+    }
+    .title2{
+        @include PageTitle2();
+    }
+}
+
+.row{
+    .col-md-12{
+        padding-top: 50px;
+        .projectCard{
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+            .projectImage{
+                width: 50%;
+            }
+            .projectInfo{
+                margin: 30px 100px 30px 0;
+                .projectAbout{
+                    .projectName{
+                        color: #fff;
+                        font-weight: 600;
+                        font-family: 'Montserrat', sans-serif;
+                    }
+                    .projectDec{
+                        color: #eee;
+                        margin: 10px 0 50px;
+                        font-family: 'Montserrat', sans-serif;
+                        width: 75%;
+                    }
+                }
+                .projectButtons{
+                    .buttons{
+                        background-color: #2b2b2b;
+                        padding: 17px 35px;
+                        color: #fff;
+                        font-size: 20px;
+                        text-decoration: none;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 500;
+                        svg{
+                            margin: 0 10px 0;
+                        }
+                        &:nth-child(2){
+                            background-color: $homeBtnColor2;
+                            color: #000;
+                            margin-left: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(2){
+            .projectCard{
+                flex-direction: row-reverse;
+                .projectInfo{
+                    margin: 30px 0;
+                }
+            }
+        }
+    }
+}
+
+// Footer
+.footer{
+    padding: 20px 0 0;
+    border-top: 1px solid #aaa;
+    text-align: center;
+    p{
+        font-size: 17px;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        svg{
+            color: #ff0000;
+        }
+    }
+}

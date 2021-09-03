@@ -1,0 +1,420 @@
+::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #faff00;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #a7d4e9;
+}
+::-webkit-scrollbar-corner {
+    color: #ffffff00;
+    background-color: #ffffff00;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap");
+
+// Colors
+$homeBtnColor: #2b2b2b;
+$homeBtnColor2: #faff00;
+$socialIconsHover: #faff00;
+
+// MIXINS
+
+@mixin PageTitle1 {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 0;
+}
+
+@mixin PageTitle2 {
+    font-size: 30px;
+    color: $homeBtnColor2;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.7px;
+}
+
+// page style
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #000000 !important;
+    overflow-x: hidden;
+}
+
+// Navbar
+
+nav {
+    padding: 15px 50px !important;
+    .navbar-brand {
+        margin-right: 0;
+        font-size: 25px;
+        color: #ffffff !important;
+        font-family: "Montserrat", sans-serif;
+    }
+    .nav {
+        margin-left: auto;
+        .nav-item {
+            margin: 20px 30px;
+            font-size: 20px;
+            font-family: "Montserrat", sans-serif;
+            a {
+                color: #ffffff !important;
+                text-decoration: none;
+                transition: 0.2s ease;
+                opacity: 0.4;
+                height: 30px;
+                display: inline-block;
+                &.active {
+                    opacity: 0.8;
+                }
+                &::after {
+                    content: "";
+                    height: 1px;
+                    width: 0;
+                    display: block;
+                    opacity: 0;
+                    transition: 1s linear;
+                    float: right;
+                }
+                &:hover {
+                    opacity: 0.8;
+                    &::after {
+                        width: 70%;
+                        opacity: 1;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+    .navbar-toggler {
+        background-color: #ffffff77 !important;
+    }
+}
+
+nav.fixed {
+    padding: 15px 50px !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: #000000cf;
+    box-shadow: 0 5px 15px #0c0c0cde;
+}
+
+// Home
+
+.aboutInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    padding: 25px 70px 0 70px;
+    .side1 {
+        width: 65%;
+        margin: 20px 0;
+        .title {
+            font-size: 70px;
+            font-family: "Montserrat", sans-serif;
+            color: #fff;
+            font-weight: 700;
+        }
+        .description {
+            width: 75%;
+            color: #aaa;
+            margin: 15px 3px 60px;
+            font-size: 22px;
+            font-family: "Montserrat", sans-serif;
+        }
+        .buttons {
+            .linkBtn {
+                padding: 17px 40px;
+                background-color: $homeBtnColor;
+                color: #fff;
+                font-size: 20px;
+                text-decoration: none;
+                font-family: "Montserrat", sans-serif;
+                font-weight: 500;
+                &:hover {
+                    background-color: $homeBtnColor2;
+                    color: #000;
+                }
+                &:nth-child(1) {
+                    margin-right: 10px;
+                    background-color: $homeBtnColor2;
+                    color: #000;
+                    &:hover {
+                        background-color: $homeBtnColor;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .socialNet {
+            margin-top: 50px;
+            .links {
+                padding: 0 30px 0 0;
+                .iconSvg {
+                    font-size: 35px;
+                    color: #fff;
+                    &:hover {
+                        color: $socialIconsHover;
+                    }
+                }
+            }
+        }
+    }
+    .side2 {
+        width: 350px;
+        border-radius: 50%;
+        overflow: hidden;
+        .myImage {
+            width: 90%;
+            transform: translate(15px, 50px);
+        }
+    }
+}
+
+// labs
+
+.titles {
+    text-align: center;
+    margin-top: 75px;
+    .title1 {
+        @include PageTitle1();
+    }
+    .title2 {
+        @include PageTitle2();
+    }
+}
+
+.row {
+    .col-md-12 {
+        padding-top: 50px;
+        .labsCard {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+            .labsImage {
+                width: 45%;
+            }
+            .labsInfo {
+                margin: 30px 30px 30px 0;
+                font-family: "Times New Roman", Times, serif;
+                .labsBody {
+                    color: #fff;
+                    .labsName {
+                        font-weight: 600;
+                    }
+                    .labsDesc {
+                        margin: 10px 0 50px;
+                        width: 80%;
+                    }
+                }
+                .labsBtns {
+                    display: flex;
+                    justify-content: space-between;
+                    .btns {
+                        background-color: #2b2b2b;
+                        padding: 17px 35px;
+                        color: $homeBtnColor2;
+                        font-size: 20px;
+                        text-decoration: none;
+                        font-weight: 400;
+                        letter-spacing: 5px;
+                        svg {
+                            margin: 0 10px 0;
+                        }
+                        &:nth-child(2) {
+                            background-color: $homeBtnColor2;
+                            color: #000;
+                            margin-left: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(even) {
+            .labsCard {
+                flex-direction: row-reverse;
+                .labsInfo {
+                    margin: 30px 0;
+                    .labsBtns {
+                        flex-direction: row-reverse;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Animatsiyalar
+
+// Navbar Animation
+@keyframes animNav {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animNav {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes animNav {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes animNav {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animNav {
+    animation-name: animNav;
+    -moz-animation-name: animNav;
+    -webkit-animation-name: animNav;
+    -o-animation-name: animNav;
+}
+
+// Home page animation
+@keyframes fadeInup {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInup {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInup {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInup {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fadeInup {
+    animation-name: fadeInup;
+    -moz-animation-name: fadeInup;
+    -webkit-animation-name: fadeInup;
+    -o-animation-name: fadeInup;
+}
+
+// Labs page animation
+@keyframes labsAnim {
+    0% {
+        transform: translateY(120px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes labsAnim {
+    0% {
+        transform: translateY(120px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes labsAnim {
+    0% {
+        transform: translateY(120px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes labsAnim {
+    0% {
+        transform: translateY(120px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.labsAnim {
+    animation-name: labsAnim;
+    -moz-animation-name: labsAnim;
+    -webkit-animation-name: labsAnim;
+    -o-animation-name: labsAnim;
+}
